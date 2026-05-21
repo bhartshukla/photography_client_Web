@@ -5,10 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LUMIÈRE — Photography Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <!-- Remix Icons -->
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;1,9..40,300&display=swap" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet" />
+  <!-- GSAP -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js"></script>
 </head>
 <body>
@@ -91,6 +95,7 @@
       <div class="hero-overlay"></div>
     </div>
 
+    <!-- Floating particles -->
     <div class="particles" id="particles"></div>
 
     <div class="hero-content">
@@ -99,10 +104,10 @@
         <span class="eyebrow-text">Award-Winning Photographer</span>
       </div>
       <h1 class="hero-title">
-        <span class="title-line">Capturing</span>
-        <span class="title-line italic">Moments</span>
-        <span class="title-line">That Last</span>
-        <span class="title-line accent">Forever.</span>
+        <span class="title-line" data-text="Capturing">Capturing</span>
+        <span class="title-line italic" data-text="Moments">Moments</span>
+        <span class="title-line" data-text="That Last">That Last</span>
+        <span class="title-line accent" data-text="Forever.">Forever.</span>
       </h1>
       <p class="hero-sub">Cinematic storytelling through the lens — weddings, portraits, &amp; beyond.</p>
       <div class="hero-btns">
@@ -116,11 +121,13 @@
       </div>
     </div>
 
+    <!-- Scroll indicator -->
     <div class="scroll-indicator">
       <div class="scroll-wheel"></div>
       <span>Scroll</span>
     </div>
 
+    <!-- Hero image strip -->
     <div class="hero-strip">
       <span>Wedding</span>
       <span class="strip-dot"></span>
@@ -129,8 +136,6 @@
       <span>Fashion</span>
       <span class="strip-dot"></span>
       <span>Portrait</span>
-      <span class="strip-dot"></span>
-      <span>Travel</span>
     </div>
   </section>
 
@@ -138,11 +143,12 @@
   <section class="portfolio section" id="portfolio">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Selected Works</span>
-        <h2 class="section-title">The Portfolio</h2>
+        <span class="section-tag reveal-tag">Selected Works</span>
+        <h2 class="section-title split-text">The Portfolio</h2>
         <p class="section-sub">Moments frozen in time, stories told through light and shadow.</p>
       </div>
 
+      <!-- Filter Tabs -->
       <div class="filter-tabs">
         <button class="filter-btn active" data-filter="all">All</button>
         <button class="filter-btn" data-filter="wedding">Wedding</button>
@@ -152,6 +158,7 @@
         <button class="filter-btn" data-filter="portrait">Portrait</button>
       </div>
 
+      <!-- Grid -->
       <div class="portfolio-grid" id="portfolioGrid">
         <div class="port-card" data-category="wedding">
           <div class="port-img-wrap">
@@ -278,6 +285,7 @@
               <span class="badge-text">Years of Excellence</span>
             </div>
           </div>
+          <!-- Floating shapes -->
           <div class="about-blob blob-1"></div>
           <div class="about-blob blob-2"></div>
         </div>
@@ -322,7 +330,7 @@
     <div class="container">
       <div class="section-header">
         <span class="section-tag">What I Offer</span>
-        <h2 class="section-title">Services</h2>
+        <h2 class="section-title split-text">Services</h2>
         <p class="section-sub">Every service crafted with obsessive attention to light, mood &amp; emotion.</p>
       </div>
       <div class="services-grid">
@@ -376,7 +384,7 @@
   <section class="gallery-slider section" id="gallery">
     <div class="section-header container">
       <span class="section-tag">Gallery</span>
-      <h2 class="section-title">Infinite Moments</h2>
+      <h2 class="section-title split-text">Infinite Moments</h2>
     </div>
     <div class="marquee-outer">
       <div class="marquee-track" id="marqueeTrack">
@@ -397,28 +405,6 @@
         <div class="marquee-item"><img src="https://images.unsplash.com/photo-1504703395950-b89145a5425b?w=600&q=75" alt="" loading="lazy" /></div>
         <div class="marquee-item"><img src="https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?w=600&q=75" alt="" loading="lazy" /></div>
         <div class="marquee-item"><img src="https://images.unsplash.com/photo-1512850183-6d7990f42385?w=600&q=75" alt="" loading="lazy" /></div>
-      </div>
-    </div>
-    <!-- Second row reverse -->
-    <div class="marquee-outer" style="margin-top:1rem;">
-      <div class="marquee-track marquee-reverse">
-        <div class="marquee-item"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=75" alt="" loading="lazy" /></div>
-        <div class="marquee-item"><img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=600&q=75" alt="" loading="lazy" /></div>
-        <div class="marquee-item"><img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=600&q=75" alt="" loading="lazy" /></div>
-        <div class="marquee-item"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=75" alt="" loading="lazy" /></div>
-        <div class="marquee-item"><img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=600&q=75" alt="" loading="lazy" /></div>
-        <div class="marquee-item"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=75" alt="" loading="lazy" /></div>
-        <div class="marquee-item"><img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&q=75" alt="" loading="lazy" /></div>
-        <div class="marquee-item"><img src="https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=600&q=75" alt="" loading="lazy" /></div>
-        <!-- Cloned -->
-        <div class="marquee-item"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=75" alt="" loading="lazy" /></div>
-        <div class="marquee-item"><img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=600&q=75" alt="" loading="lazy" /></div>
-        <div class="marquee-item"><img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=600&q=75" alt="" loading="lazy" /></div>
-        <div class="marquee-item"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=75" alt="" loading="lazy" /></div>
-        <div class="marquee-item"><img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=600&q=75" alt="" loading="lazy" /></div>
-        <div class="marquee-item"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=75" alt="" loading="lazy" /></div>
-        <div class="marquee-item"><img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&q=75" alt="" loading="lazy" /></div>
-        <div class="marquee-item"><img src="https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=600&q=75" alt="" loading="lazy" /></div>
       </div>
     </div>
   </section>
@@ -456,7 +442,7 @@
     <div class="container">
       <div class="section-header">
         <span class="section-tag">Kind Words</span>
-        <h2 class="section-title">Client Stories</h2>
+        <h2 class="section-title split-text">Client Stories</h2>
       </div>
       <div class="testimonials-wrapper">
         <div class="testi-track" id="testiTrack">
@@ -527,7 +513,7 @@
     <div class="container">
       <div class="section-header">
         <span class="section-tag">Get In Touch</span>
-        <h2 class="section-title">Let's Create<br /><em>Together</em></h2>
+        <h2 class="section-title split-text">Let's Create<br /><em>Together</em></h2>
       </div>
       <div class="contact-grid">
         <div class="contact-info">
@@ -561,17 +547,16 @@
             <a href="#" aria-label="Twitter"><i class="ri-twitter-x-line"></i></a>
             <a href="#" aria-label="YouTube"><i class="ri-youtube-line"></i></a>
           </div>
+          <!-- Map block -->
           <div class="map-block glass">
             <i class="ri-map-2-line map-icon"></i>
-            <div>
-              <span>Mumbai, Maharashtra</span>
-              <small>View on Google Maps ↗</small>
-            </div>
+            <span>Mumbai, Maharashtra</span>
+            <small>View on Google Maps</small>
           </div>
         </div>
 
         <div class="contact-form-wrap glass">
-          <form class="contact-form" id="contactForm">
+          <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form" id="contactForm">
             <div class="form-group floating">
               <input type="text" name="name" id="nameInput" placeholder=" " required autocomplete="off" />
               <label for="nameInput">Your Name</label>
@@ -662,7 +647,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="container footer-bottom-inner">
+      <div class="container">
         <p>&copy; 2025 LUMIÈRE. All rights reserved. Crafted with <i class="ri-heart-fill" style="color:var(--gold)"></i> in Mumbai.</p>
         <a href="#home" class="back-top" id="backTop" aria-label="Back to top"><i class="ri-arrow-up-line"></i></a>
       </div>
