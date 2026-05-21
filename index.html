@@ -1,1 +1,674 @@
-d
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LUMIÈRE — Photography Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;1,9..40,300&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js"></script>
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Noise Overlay -->
+  <div class="noise-overlay"></div>
+
+  <!-- ==================== NAVBAR ==================== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <span class="logo-text">LUMIÈRE</span>
+        <span class="logo-dot"></span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#gallery" class="nav-link">Gallery</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <button class="nav-cta magnetic-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+        Book a Shoot
+      </button>
+
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <ul class="mobile-nav-links">
+        <li><a href="#home" class="mobile-nav-link">Home</a></li>
+        <li><a href="#portfolio" class="mobile-nav-link">Portfolio</a></li>
+        <li><a href="#services" class="mobile-nav-link">Services</a></li>
+        <li><a href="#about" class="mobile-nav-link">About</a></li>
+        <li><a href="#gallery" class="mobile-nav-link">Gallery</a></li>
+        <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+      </ul>
+      <div class="mobile-socials">
+        <a href="#" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
+        <a href="#" aria-label="WhatsApp"><i class="ri-whatsapp-line"></i></a>
+        <a href="#" aria-label="Twitter"><i class="ri-twitter-x-line"></i></a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================== SOCIAL BAR ==================== -->
+  <div class="social-bar" id="socialBar">
+    <a href="#" class="social-icon" aria-label="Instagram">
+      <i class="ri-instagram-line"></i>
+      <span class="social-tooltip">Instagram</span>
+    </a>
+    <a href="#" class="social-icon" aria-label="WhatsApp">
+      <i class="ri-whatsapp-line"></i>
+      <span class="social-tooltip">WhatsApp</span>
+    </a>
+    <a href="#" class="social-icon" aria-label="Twitter">
+      <i class="ri-twitter-x-line"></i>
+      <span class="social-tooltip">Twitter / X</span>
+    </a>
+    <div class="social-line"></div>
+  </div>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1920&q=80" alt="Hero" class="hero-img" id="heroImg" loading="eager" />
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="particles" id="particles"></div>
+
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="eyebrow-line"></span>
+        <span class="eyebrow-text">Award-Winning Photographer</span>
+      </div>
+      <h1 class="hero-title">
+        <span class="title-line">Capturing</span>
+        <span class="title-line italic">Moments</span>
+        <span class="title-line">That Last</span>
+        <span class="title-line accent">Forever.</span>
+      </h1>
+      <p class="hero-sub">Cinematic storytelling through the lens — weddings, portraits, &amp; beyond.</p>
+      <div class="hero-btns">
+        <a href="#portfolio" class="btn-primary magnetic-btn">
+          <span>View Portfolio</span>
+          <i class="ri-arrow-right-up-line"></i>
+        </a>
+        <a href="#contact" class="btn-secondary magnetic-btn">
+          <span>Contact Me</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <div class="scroll-wheel"></div>
+      <span>Scroll</span>
+    </div>
+
+    <div class="hero-strip">
+      <span>Wedding</span>
+      <span class="strip-dot"></span>
+      <span>Nature</span>
+      <span class="strip-dot"></span>
+      <span>Fashion</span>
+      <span class="strip-dot"></span>
+      <span>Portrait</span>
+      <span class="strip-dot"></span>
+      <span>Travel</span>
+    </div>
+  </section>
+
+  <!-- ==================== PORTFOLIO ==================== -->
+  <section class="portfolio section" id="portfolio">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Selected Works</span>
+        <h2 class="section-title">The Portfolio</h2>
+        <p class="section-sub">Moments frozen in time, stories told through light and shadow.</p>
+      </div>
+
+      <div class="filter-tabs">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="wedding">Wedding</button>
+        <button class="filter-btn" data-filter="nature">Nature</button>
+        <button class="filter-btn" data-filter="fashion">Fashion</button>
+        <button class="filter-btn" data-filter="travel">Travel</button>
+        <button class="filter-btn" data-filter="portrait">Portrait</button>
+      </div>
+
+      <div class="portfolio-grid" id="portfolioGrid">
+        <div class="port-card" data-category="wedding">
+          <div class="port-img-wrap">
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80" alt="Wedding" loading="lazy" />
+            <div class="port-overlay">
+              <div class="port-info">
+                <span class="port-cat">Wedding</span>
+                <h3>Golden Vows</h3>
+                <a href="#" class="port-link"><i class="ri-arrow-right-up-line"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="port-card tall" data-category="portrait">
+          <div class="port-img-wrap">
+            <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&q=80" alt="Portrait" loading="lazy" />
+            <div class="port-overlay">
+              <div class="port-info">
+                <span class="port-cat">Portrait</span>
+                <h3>Soul Gaze</h3>
+                <a href="#" class="port-link"><i class="ri-arrow-right-up-line"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="port-card" data-category="nature">
+          <div class="port-img-wrap">
+            <img src="https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=800&q=80" alt="Nature" loading="lazy" />
+            <div class="port-overlay">
+              <div class="port-info">
+                <span class="port-cat">Nature</span>
+                <h3>Wild Light</h3>
+                <a href="#" class="port-link"><i class="ri-arrow-right-up-line"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="port-card wide" data-category="fashion">
+          <div class="port-img-wrap">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Fashion" loading="lazy" />
+            <div class="port-overlay">
+              <div class="port-info">
+                <span class="port-cat">Fashion</span>
+                <h3>Avant Garde</h3>
+                <a href="#" class="port-link"><i class="ri-arrow-right-up-line"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="port-card" data-category="travel">
+          <div class="port-img-wrap">
+            <img src="https://images.unsplash.com/photo-1503220317375-aaad61436b1b?w=800&q=80" alt="Travel" loading="lazy" />
+            <div class="port-overlay">
+              <div class="port-info">
+                <span class="port-cat">Travel</span>
+                <h3>Distant Shores</h3>
+                <a href="#" class="port-link"><i class="ri-arrow-right-up-line"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="port-card tall" data-category="wedding">
+          <div class="port-img-wrap">
+            <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=800&q=80" alt="Wedding" loading="lazy" />
+            <div class="port-overlay">
+              <div class="port-info">
+                <span class="port-cat">Wedding</span>
+                <h3>First Dance</h3>
+                <a href="#" class="port-link"><i class="ri-arrow-right-up-line"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="port-card" data-category="nature">
+          <div class="port-img-wrap">
+            <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&q=80" alt="Nature" loading="lazy" />
+            <div class="port-overlay">
+              <div class="port-info">
+                <span class="port-cat">Nature</span>
+                <h3>Golden Hour</h3>
+                <a href="#" class="port-link"><i class="ri-arrow-right-up-line"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="port-card" data-category="portrait">
+          <div class="port-img-wrap">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80" alt="Portrait" loading="lazy" />
+            <div class="port-overlay">
+              <div class="port-info">
+                <span class="port-cat">Portrait</span>
+                <h3>The Dreamer</h3>
+                <a href="#" class="port-link"><i class="ri-arrow-right-up-line"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="port-card" data-category="fashion">
+          <div class="port-img-wrap">
+            <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=800&q=80" alt="Fashion" loading="lazy" />
+            <div class="port-overlay">
+              <div class="port-info">
+                <span class="port-cat">Fashion</span>
+                <h3>Urban Muse</h3>
+                <a href="#" class="port-link"><i class="ri-arrow-right-up-line"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT ==================== -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-visual">
+          <div class="about-img-wrap">
+            <img src="https://images.unsplash.com/photo-1554048612-b6a482bc67e5?w=800&q=80" alt="Photographer" loading="lazy" />
+            <div class="about-img-deco"></div>
+            <div class="about-badge">
+              <span class="badge-num">5+</span>
+              <span class="badge-text">Years of Excellence</span>
+            </div>
+          </div>
+          <div class="about-blob blob-1"></div>
+          <div class="about-blob blob-2"></div>
+        </div>
+
+        <div class="about-content">
+          <span class="section-tag">About Me</span>
+          <h2 class="section-title">The Eye Behind<br /><em>the Lens</em></h2>
+          <p class="about-text">I'm <strong>Aryan Verma</strong>, a cinematic photographer based in Mumbai. With over five years crafting visual stories, I blend technical precision with raw emotion — turning fleeting instants into timeless art.</p>
+          <p class="about-text muted">Every frame I capture is a conversation between light, shadow, and the human soul. I believe photography isn't just about what you see — it's about what you <em>feel</em>.</p>
+
+          <div class="skills-list">
+            <div class="skill-item">
+              <div class="skill-head"><span>Wedding Photography</span><span>98%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="98"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-head"><span>Portrait Mastery</span><span>95%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-head"><span>Fashion &amp; Editorial</span><span>90%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-head"><span>Post-Processing</span><span>97%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="97"></div></div>
+            </div>
+          </div>
+
+          <div class="about-stats">
+            <div class="stat-pill"><span class="stat-n" data-count="500">0</span><sup>+</sup><small>Shoots</small></div>
+            <div class="stat-pill"><span class="stat-n" data-count="200">0</span><sup>+</sup><small>Clients</small></div>
+            <div class="stat-pill"><span class="stat-n" data-count="10">0</span><sup>+</sup><small>Awards</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SERVICES ==================== -->
+  <section class="services section" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">What I Offer</span>
+        <h2 class="section-title">Services</h2>
+        <p class="section-sub">Every service crafted with obsessive attention to light, mood &amp; emotion.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card" data-tilt>
+          <div class="service-icon-wrap"><i class="ri-heart-line"></i></div>
+          <h3>Wedding Photography</h3>
+          <p>Candid, emotional, cinematic — your love story told through stunning imagery.</p>
+          <a href="#contact" class="service-link">Enquire <i class="ri-arrow-right-line"></i></a>
+          <div class="service-glow"></div>
+        </div>
+        <div class="service-card" data-tilt>
+          <div class="service-icon-wrap"><i class="ri-flight-takeoff-line"></i></div>
+          <h3>Drone Photography</h3>
+          <p>Breathtaking aerial visuals that transform landscapes into living art.</p>
+          <a href="#contact" class="service-link">Enquire <i class="ri-arrow-right-line"></i></a>
+          <div class="service-glow"></div>
+        </div>
+        <div class="service-card" data-tilt>
+          <div class="service-icon-wrap"><i class="ri-calendar-event-line"></i></div>
+          <h3>Event Coverage</h3>
+          <p>Corporate events, galas, and celebrations captured with precision.</p>
+          <a href="#contact" class="service-link">Enquire <i class="ri-arrow-right-line"></i></a>
+          <div class="service-glow"></div>
+        </div>
+        <div class="service-card" data-tilt>
+          <div class="service-icon-wrap"><i class="ri-camera-3-line"></i></div>
+          <h3>Studio Photography</h3>
+          <p>Controlled perfection — product, portrait &amp; fashion studio sessions.</p>
+          <a href="#contact" class="service-link">Enquire <i class="ri-arrow-right-line"></i></a>
+          <div class="service-glow"></div>
+        </div>
+        <div class="service-card" data-tilt>
+          <div class="service-icon-wrap"><i class="ri-film-line"></i></div>
+          <h3>Cinematic Shoots</h3>
+          <p>Hyper-cinematic photography blurring the line between still and moving image.</p>
+          <a href="#contact" class="service-link">Enquire <i class="ri-arrow-right-line"></i></a>
+          <div class="service-glow"></div>
+        </div>
+        <div class="service-card" data-tilt>
+          <div class="service-icon-wrap"><i class="ri-magic-line"></i></div>
+          <h3>Editing &amp; Retouching</h3>
+          <p>Master-level post-processing that elevates every pixel to its full potential.</p>
+          <a href="#contact" class="service-link">Enquire <i class="ri-arrow-right-line"></i></a>
+          <div class="service-glow"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== GALLERY SLIDER ==================== -->
+  <section class="gallery-slider section" id="gallery">
+    <div class="section-header container">
+      <span class="section-tag">Gallery</span>
+      <h2 class="section-title">Infinite Moments</h2>
+    </div>
+    <div class="marquee-outer">
+      <div class="marquee-track" id="marqueeTrack">
+        <div class="marquee-item"><img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=600&q=75" alt="" loading="lazy" /></div>
+        <div class="marquee-item"><img src="https://images.unsplash.com/photo-1502759683299-cdcd6974244f?w=600&q=75" alt="" loading="lazy" /></div>
+        <div class="marquee-item"><img src="https://images.unsplash.com/photo-1499810631641-541e76d678a2?w=600&q=75" alt="" loading="lazy" /></div>
+        <div class="marquee-item"><img src="https://images.unsplash.com/photo-1550159930-40066082a4fc?w=600&q=75" alt="" loading="lazy" /></div>
+        <div class="marquee-item"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&q=75" alt="" loading="lazy" /></div>
+        <div class="marquee-item"><img src="https://images.unsplash.com/photo-1504703395950-b89145a5425b?w=600&q=75" alt="" loading="lazy" /></div>
+        <div class="marquee-item"><img src="https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?w=600&q=75" alt="" loading="lazy" /></div>
+        <div class="marquee-item"><img src="https://images.unsplash.com/photo-1512850183-6d7990f42385?w=600&q=75" alt="" loading="lazy" /></div>
+        <!-- Cloned for seamless loop -->
+        <div class="marquee-item"><img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=600&q=75" alt="" loading="lazy" /></div>
+        <div class="marquee-item"><img src="https://images.unsplash.com/photo-1502759683299-cdcd6974244f?w=600&q=75" alt="" loading="lazy" /></div>
+        <div class="marquee-item"><img src="https://images.unsplash.com/photo-1499810631641-541e76d678a2?w=600&q=75" alt="" loading="lazy" /></div>
+        <div class="marquee-item"><img src="https://images.unsplash.com/photo-1550159930-40066082a4fc?w=600&q=75" alt="" loading="lazy" /></div>
+        <div class="marquee-item"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&q=75" alt="" loading="lazy" /></div>
+        <div class="marquee-item"><img src="https://images.unsplash.com/photo-1504703395950-b89145a5425b?w=600&q=75" alt="" loading="lazy" /></div>
+        <div class="marquee-item"><img src="https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?w=600&q=75" alt="" loading="lazy" /></div>
+        <div class="marquee-item"><img src="https://images.unsplash.com/photo-1512850183-6d7990f42385?w=600&q=75" alt="" loading="lazy" /></div>
+      </div>
+    </div>
+    <!-- Second row reverse -->
+    <div class="marquee-outer" style="margin-top:1rem;">
+      <div class="marquee-track marquee-reverse">
+        <div class="marquee-item"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=75" alt="" loading="lazy" /></div>
+        <div class="marquee-item"><img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=600&q=75" alt="" loading="lazy" /></div>
+        <div class="marquee-item"><img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=600&q=75" alt="" loading="lazy" /></div>
+        <div class="marquee-item"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=75" alt="" loading="lazy" /></div>
+        <div class="marquee-item"><img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=600&q=75" alt="" loading="lazy" /></div>
+        <div class="marquee-item"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=75" alt="" loading="lazy" /></div>
+        <div class="marquee-item"><img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&q=75" alt="" loading="lazy" /></div>
+        <div class="marquee-item"><img src="https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=600&q=75" alt="" loading="lazy" /></div>
+        <!-- Cloned -->
+        <div class="marquee-item"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=75" alt="" loading="lazy" /></div>
+        <div class="marquee-item"><img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=600&q=75" alt="" loading="lazy" /></div>
+        <div class="marquee-item"><img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=600&q=75" alt="" loading="lazy" /></div>
+        <div class="marquee-item"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=75" alt="" loading="lazy" /></div>
+        <div class="marquee-item"><img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=600&q=75" alt="" loading="lazy" /></div>
+        <div class="marquee-item"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=75" alt="" loading="lazy" /></div>
+        <div class="marquee-item"><img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&q=75" alt="" loading="lazy" /></div>
+        <div class="marquee-item"><img src="https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=600&q=75" alt="" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== STATISTICS ==================== -->
+  <section class="stats section">
+    <div class="stats-bg-img" style="background-image:url('https://images.unsplash.com/photo-1452802447250-470a88ac82bc?w=1600&q=70')"></div>
+    <div class="stats-overlay"></div>
+    <div class="container stats-grid">
+      <div class="stat-block">
+        <i class="ri-camera-2-line"></i>
+        <span class="counter" data-count="500">0</span><sup>+</sup>
+        <p>Shoots Completed</p>
+      </div>
+      <div class="stat-block">
+        <i class="ri-user-smile-line"></i>
+        <span class="counter" data-count="200">0</span><sup>+</sup>
+        <p>Happy Clients</p>
+      </div>
+      <div class="stat-block">
+        <i class="ri-award-line"></i>
+        <span class="counter" data-count="10">0</span><sup>+</sup>
+        <p>Awards Won</p>
+      </div>
+      <div class="stat-block">
+        <i class="ri-time-line"></i>
+        <span class="counter" data-count="5">0</span><sup>+</sup>
+        <p>Years Experience</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TESTIMONIALS ==================== -->
+  <section class="testimonials section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Kind Words</span>
+        <h2 class="section-title">Client Stories</h2>
+      </div>
+      <div class="testimonials-wrapper">
+        <div class="testi-track" id="testiTrack">
+          <div class="testi-card glass">
+            <div class="testi-stars">
+              <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+            </div>
+            <p>"Aryan captured our wedding like it was a feature film. Every frame was pure poetry. We still look at the album every anniversary."</p>
+            <div class="testi-author">
+              <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=100&q=70" alt="Priya" loading="lazy" />
+              <div>
+                <strong>Priya Sharma</strong>
+                <span>Bride, Mumbai 2023</span>
+              </div>
+            </div>
+          </div>
+          <div class="testi-card glass">
+            <div class="testi-stars">
+              <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+            </div>
+            <p>"The portraits he shot for our brand campaign completely transformed our marketing. Professional, creative, and an absolute pleasure to work with."</p>
+            <div class="testi-author">
+              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=70" alt="Rohan" loading="lazy" />
+              <div>
+                <strong>Rohan Mehta</strong>
+                <span>Brand Director, Delhi</span>
+              </div>
+            </div>
+          </div>
+          <div class="testi-card glass">
+            <div class="testi-stars">
+              <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i>
+            </div>
+            <p>"I've worked with many photographers across 15 years of fashion, and Aryan stands out for his ability to tell a story with a single still. Remarkable talent."</p>
+            <div class="testi-author">
+              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=70" alt="Anya" loading="lazy" />
+              <div>
+                <strong>Anya Kapoor</strong>
+                <span>Fashion Editor, Vogue India</span>
+              </div>
+            </div>
+          </div>
+          <div class="testi-card glass">
+            <div class="testi-stars">
+              <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+            </div>
+            <p>"He photographed our entire corporate gala and the results were beyond stunning. Every detail was perfect. Will absolutely work together again."</p>
+            <div class="testi-author">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&q=70" alt="Vikram" loading="lazy" />
+              <div>
+                <strong>Vikram Singh</strong>
+                <span>CEO, Nexus Corp</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-controls">
+          <button class="testi-btn" id="testiPrev"><i class="ri-arrow-left-line"></i></button>
+          <div class="testi-dots" id="testiDots"></div>
+          <button class="testi-btn" id="testiNext"><i class="ri-arrow-right-line"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT ==================== -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Get In Touch</span>
+        <h2 class="section-title">Let's Create<br /><em>Together</em></h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p class="contact-intro">Have a vision? Let's bring it to life. Reach out for bookings, collaborations, or just to say hello.</p>
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="citem-icon"><i class="ri-map-pin-2-line"></i></div>
+              <div>
+                <strong>Studio</strong>
+                <span>Bandra West, Mumbai, India</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="citem-icon"><i class="ri-mail-line"></i></div>
+              <div>
+                <strong>Email</strong>
+                <span>hello@lumiere.photo</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="citem-icon"><i class="ri-phone-line"></i></div>
+              <div>
+                <strong>Phone</strong>
+                <span>+91 98765 43210</span>
+              </div>
+            </div>
+          </div>
+          <div class="contact-socials">
+            <a href="#" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="ri-whatsapp-line"></i></a>
+            <a href="#" aria-label="Twitter"><i class="ri-twitter-x-line"></i></a>
+            <a href="#" aria-label="YouTube"><i class="ri-youtube-line"></i></a>
+          </div>
+          <div class="map-block glass">
+            <i class="ri-map-2-line map-icon"></i>
+            <div>
+              <span>Mumbai, Maharashtra</span>
+              <small>View on Google Maps ↗</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap glass">
+          <form class="contact-form" id="contactForm">
+            <div class="form-group floating">
+              <input type="text" name="name" id="nameInput" placeholder=" " required autocomplete="off" />
+              <label for="nameInput">Your Name</label>
+              <span class="form-border"></span>
+            </div>
+            <div class="form-group floating">
+              <input type="email" name="email" id="emailInput" placeholder=" " required autocomplete="off" />
+              <label for="emailInput">Email Address</label>
+              <span class="form-border"></span>
+            </div>
+            <div class="form-group floating">
+              <input type="tel" name="phone" id="phoneInput" placeholder=" " autocomplete="off" />
+              <label for="phoneInput">Phone Number</label>
+              <span class="form-border"></span>
+            </div>
+            <div class="form-group floating">
+              <select name="service" id="serviceInput" required>
+                <option value="" disabled selected></option>
+                <option>Wedding Photography</option>
+                <option>Drone Photography</option>
+                <option>Event Coverage</option>
+                <option>Studio Photography</option>
+                <option>Cinematic Shoots</option>
+                <option>Editing &amp; Retouching</option>
+              </select>
+              <label for="serviceInput">Service Required</label>
+              <span class="form-border"></span>
+            </div>
+            <div class="form-group floating">
+              <textarea name="message" id="messageInput" placeholder=" " rows="4" required></textarea>
+              <label for="messageInput">Your Message</label>
+              <span class="form-border"></span>
+            </div>
+            <button type="submit" class="btn-primary submit-btn magnetic-btn">
+              <span>Send Message</span>
+              <i class="ri-send-plane-2-line"></i>
+            </button>
+            <div class="form-success" id="formSuccess">
+              <i class="ri-checkbox-circle-line"></i>
+              <span>Message sent! I'll be in touch soon.</span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <span class="footer-logo">LUMIÈRE</span>
+          <p>Cinematic photography from the heart of Mumbai. Every moment, a masterpiece.</p>
+          <div class="footer-socials">
+            <a href="#" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="ri-whatsapp-line"></i></a>
+            <a href="#" aria-label="Twitter"><i class="ri-twitter-x-line"></i></a>
+            <a href="#" aria-label="YouTube"><i class="ri-youtube-line"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Wedding</a></li>
+            <li><a href="#services">Drone</a></li>
+            <li><a href="#services">Events</a></li>
+            <li><a href="#services">Studio</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:hello@lumiere.photo">hello@lumiere.photo</a></li>
+            <li><a href="tel:+919876543210">+91 98765 43210</a></li>
+            <li><span>Bandra West, Mumbai</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; 2025 LUMIÈRE. All rights reserved. Crafted with <i class="ri-heart-fill" style="color:var(--gold)"></i> in Mumbai.</p>
+        <a href="#home" class="back-top" id="backTop" aria-label="Back to top"><i class="ri-arrow-up-line"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
